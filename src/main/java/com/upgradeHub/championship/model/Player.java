@@ -11,7 +11,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name ="Player")
+@Table(name ="PLAYER")
 @Entity
 public class Player {
     @Id
@@ -23,9 +23,7 @@ public class Player {
     private Long weight;
 
     @ManyToOne
-    @MapsId("teamId")
-    @JoinColumn(name = "team_id")
-    //@Column(columnDefinition = "team default 1")
+    @JoinColumn(name = "team_id", nullable = false)
     private Team team;
     @ManyToMany
     @JoinTable(

@@ -1,5 +1,6 @@
 package com.upgradeHub.championship.model;
 import lombok.*;
+import org.springframework.boot.context.properties.bind.DefaultValue;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
@@ -12,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name ="Team",indexes = @Index(columnList = "teamName"))
+@Table(name ="TEAM",indexes = @Index(columnList = "teamName"))
 @Entity
 public class Team {
     @Id
@@ -22,5 +23,5 @@ public class Team {
     private TeamType teamType;
     private String teamName;
     @OneToMany(mappedBy = "team")
-    private List<Player> playerList;
+    private List<Player> player;
 }
