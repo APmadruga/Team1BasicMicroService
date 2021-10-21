@@ -18,10 +18,10 @@ public class TeamController {
     }
 
     @GetMapping("/teams")
-    public List<Team> getPlayers() {return teamService.findAll();}
+    public List<Team> getTeams() {return teamService.findAll();}
 
     @GetMapping("/teams/{id}")
-    public Team getPlayerById(@PathVariable(value = "id") Long id) {return teamService.findById(id);}
+    public Team getTeamsById(@PathVariable(value = "id") Long id) {return teamService.findById(id);}
 
 
     //Create

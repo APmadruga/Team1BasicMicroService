@@ -24,14 +24,14 @@ public class PlayerController {
 
     //Create
     @PostMapping(value ="/player", consumes = "application/json", produces = "application/json")
-    public ResponseEntity createPlayer(@RequestBody PlayerRQ playerRQ, @RequestBody Long teamId){
+    public ResponseEntity createPlayer(@RequestBody PlayerRQ playerRQ, @RequestParam Long teamId){
         Long playerId = playerService.createPlayer(playerRQ, teamId).getId();
         return ResponseEntity.created(URI.create("/player/" + playerId )).body("Player Created");
     }
 
     //Update
     @PutMapping(value ="/player/{id}", consumes = "application/json", produces = "application/json")
-    public ResponseEntity updatePlayerByID(@RequestParam Long id, @RequestBody PlayerRQ playerRQ,  @RequestBody Long teamId){
+    public ResponseEntity updatePlayerByID(@RequestParam Long id, @RequestBody PlayerRQ playerRQ,  @RequestParam Long teamId){
         Long playerId = playerService.updatePlayerById(id, playerRQ, teamId).getId();
         return ResponseEntity.created(URI.create("/player/" + playerId)).body("Player Updated");
     }
