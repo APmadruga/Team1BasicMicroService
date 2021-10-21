@@ -23,15 +23,12 @@ public class GameController {
     @GetMapping("/games/{id}")
     public Game getGamesById(@PathVariable(value = "id") Long id) {return gameService.findById(id);}
 
-
-    //Create
     @PostMapping(value ="/game", consumes = "application/json", produces = "application/json")
     public ResponseEntity createGame(@RequestBody GameRQ gameRQ){
         String gameDay = gameService.createGame(gameRQ).getLocalDateTime().toString();
         return ResponseEntity.created(URI.create("/game/" + gameDay )).body("Game Created");
     }
 
-    //Update
     @PutMapping(value ="/game/{id}", consumes = "application/json", produces = "application/json")
     public ResponseEntity updateGameByID(@RequestParam Long id, @RequestBody GameRQ gameRQ){
         gameService.updateGameById(id, gameRQ);

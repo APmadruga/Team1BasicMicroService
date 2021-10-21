@@ -1,10 +1,6 @@
 package com.upgradeHub.championship.model;
 import lombok.*;
-import org.springframework.boot.context.properties.bind.DefaultValue;
-import org.springframework.lang.Nullable;
-
 import javax.persistence.*;
-import javax.validation.constraints.Null;
 import java.util.List;
 
 @Getter

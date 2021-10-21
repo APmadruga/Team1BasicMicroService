@@ -6,7 +6,6 @@ import com.upgradeHub.championship.model.Team;
 import com.upgradeHub.championship.repository.PlayerRepository;
 import com.upgradeHub.championship.repository.TeamRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service

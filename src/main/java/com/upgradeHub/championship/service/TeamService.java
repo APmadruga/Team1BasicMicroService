@@ -1,8 +1,6 @@
 package com.upgradeHub.championship.service;
-import com.fasterxml.jackson.annotation.JacksonInject;
 import com.upgradeHub.championship.controller.request.TeamRQ;
 import com.upgradeHub.championship.exception.ResourceNotFound;
-import com.upgradeHub.championship.model.Player;
 import com.upgradeHub.championship.model.Team;
 import com.upgradeHub.championship.model.TeamType;
 import com.upgradeHub.championship.repository.TeamRepository;
@@ -73,5 +71,4 @@ public class TeamService {
     public Team findById(Long id) {
         return teamRepository.findById(id).get();
     }
-
 }
