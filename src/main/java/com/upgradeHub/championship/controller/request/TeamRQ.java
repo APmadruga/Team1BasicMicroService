@@ -1,5 +1,4 @@
 package com.upgradeHub.championship.controller.request;
-
 import com.upgradeHub.championship.model.TeamType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

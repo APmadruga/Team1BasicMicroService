@@ -1,5 +1,7 @@
 package com.upgradeHub.championship.model;
 import lombok.*;
+import org.springframework.lang.Nullable;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -19,9 +21,11 @@ public class Player {
     private int age;
     private Long height;
     private Long weight;
+
     @ManyToOne
     @MapsId("teamId")
     @JoinColumn(name = "team_id")
+    //@Column(columnDefinition = "team default 1")
     private Team team;
     @ManyToMany
     @JoinTable(

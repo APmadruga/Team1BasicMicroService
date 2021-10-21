@@ -1,6 +1,9 @@
 package com.upgradeHub.championship.model;
 import lombok.*;
+import org.springframework.lang.Nullable;
+
 import javax.persistence.*;
+import javax.validation.constraints.Null;
 import java.util.List;
 
 @Getter
@@ -18,7 +21,6 @@ public class Team {
     @Enumerated
     private TeamType teamType;
     private String teamName;
-    //Uma team tem Muitos jogadores
     @OneToMany(mappedBy = "team")
     private List<Player> playerList;
 }
